@@ -1,4 +1,4 @@
-# Knaji Converter
+# Kanji Converter
 
 This application converts Japanese Kanji, traditional and simplified.
 
