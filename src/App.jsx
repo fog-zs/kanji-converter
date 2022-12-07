@@ -1,11 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import KanjiConverter from './components/KanjiConverter';
 import Container from '@mui/material/Container';
 const styles = {
-  
     paddingTop: "20px",    
-  
 };
 
 function App() {

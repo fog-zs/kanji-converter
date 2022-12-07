@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import dataJson from "../kanji.json";
@@ -14,22 +14,31 @@ const KanjiConverter = ()=> {
     const strTranslate = (type, sourceText) =>{
         const table = dataJson
         let text = sourceText.slice()
+        
+        // 全文字のループ
         for (let [index, value] of table[type].entries())
-        {
-            if (value === "\u3000") 
-            {
-                // 空白の場合は繁体字にする
-                value = table[countryCode[1]][index]
-            }
-            
+        {                        
             countryCode.forEach ((code)=>{
                 // 国のコードの置換元と置換対象が一緒の場合スキップ
                 if (code === type) return;
-                const target = table[code][index]
+
+                let target = table[code][index]
     
                 // 空白の場合はスキップする
-                if (target === "\u3000") return;
-                                
+                if (target === "") {
+                    return;
+                }
+
+                // 空白の場合はスキップする
+                if (value === ""){
+                    return;
+                }
+
+                // 文字が同じときスキップする
+                if (target === value) {
+                    return;
+                }
+
                 text = text.replaceAll(target, value)
             })
         }
