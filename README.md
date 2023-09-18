@@ -1,12 +1,54 @@
-# Kanji Converter
+# 汉字转换・漢字轉換・漢字変換・Kanji Converter
+
+该应用程序将日本的汉字、繁体字和简体字相互转换。
+
+日本の漢字、繁体字と簡体字を相互変換するWebアプリです。
 
 This application converts Japanese Kanji, traditional and simplified.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## 技术细节
 
-In the project directory, you can run:
+KanjiConverter 应用程序使用了以下技术和库：
+
+- React：用于构建用户界面的JavaScript库。
+- Material-UI：用于创建漂亮的UI组件的UI框架。
+- pinyin：用于将文本转换为拼音的JavaScript库。
+- zhuyin：用于将拼音转换为注音的JavaScript库。
+
+## 示例
+
+以下是一个使用 KanjiConverter 应用程序的示例：
+
+输入日文文本：
+
+```
+図書館
+```
+
+应用程序会将其转换为繁体中文：
+
+```
+圖書館
+```
+
+以及简体中文：
+
+```
+图书馆
+```
+
+拼音：
+
+```
+tú,shū,guǎn
+```
+
+和注音：
+
+```
+ㄊㄨˊ,ㄕㄨ,ㄍㄨㄢˇ
+```
 
 ### `npm start`
 
@@ -31,18 +73,10 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## 贡献
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+如果您想为 KanjiConverter 应用程序做出贡献或报告问题，请在 GitHub 存储库中创建一个问题或提出请求。
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 许可证
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+KanjiConverter 应用程序基于 [MIT 许可证](LICENSE) 开源。
