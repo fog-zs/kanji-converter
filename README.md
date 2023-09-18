@@ -79,4 +79,4 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ## 许可证
 
-KanjiConverter 应用程序基于 [MIT 许可证](LICENSE) 开源。
+KanjiConverter 应用程序基于 [MIT 许可证](LICENSE.md) 开源。
