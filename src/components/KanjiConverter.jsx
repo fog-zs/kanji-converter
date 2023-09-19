@@ -11,6 +11,7 @@ const KanjiConverter = () => {
   const [strCN, setCN] = useState("");
   const [strPinyin, setPinyin] = useState("");
   const [strZhuyin, setZhuyin] = useState("");
+  const [strOld, setOld] = useState("");
 
   const countryCode = ["ja", "zh-TW", "zh-CN"];
 
@@ -43,11 +44,13 @@ const KanjiConverter = () => {
     const twText = strTranslate(countryCode[1], inputValue);
     const cnText = strTranslate(countryCode[2], inputValue);
     const pinyinText = getPinyin(inputValue);
-    
+    const oldText = kanaConverter(twText);
+
     setJA(jaText);
     setTW(twText);
     setCN(cnText);
     setPinyin(pinyinText);
+    setOld(oldText.split('').reverse().join(''));
   };
 
   const getPinyin = (text) => {
@@ -56,6 +59,13 @@ const KanjiConverter = () => {
     }
     const txt = pinyin(text);
     return txt.join(",");
+  };
+
+  const kanaConverter = (text) => {
+    return text.replace(/[\u3041-\u3096]/g, function (match) {
+      const charCode = match.charCodeAt(0) + 0x60;
+      return String.fromCharCode(charCode);
+    });
   };
 
   useEffect(() => {
@@ -127,6 +137,19 @@ const KanjiConverter = () => {
             multiline
             rows={5}
             value={strZhuyin}
+            variant="outlined"
+            fullWidth
+          />
+        </Grid>
+
+        <Grid item xs={12} sm={6}>
+          <TextField
+            disabled
+            id="outlined-multiline-static-old"
+            label="旧"
+            multiline
+            rows={5}
+            value={strOld}
             variant="outlined"
             fullWidth
           />
